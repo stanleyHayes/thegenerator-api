@@ -21,8 +21,8 @@ exports.generatePhoneNumbers = async (req, res) => {
         for(let i = 0; i < possibleLengths.length; i++){
             let possibleLength = possibleLengths[i];
 
-            const zeros = generate('0', possibleLength - (countryPhoneCode.length + 4));
-            const nines = generate('9', possibleLength - (countryPhoneCode.length + 4));
+            const zeros = generate('0', possibleLength - 4);
+            const nines = generate('9', possibleLength - 4);
 
             const startNumber = parseInt(`${countryPhoneCode}${digits}${zeros}`);
             const endNumber = parseInt(`${countryPhoneCode}${digits}${nines}`);
